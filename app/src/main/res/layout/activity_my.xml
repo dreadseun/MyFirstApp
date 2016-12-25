@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView android:id="@+id/new_customer"
+        android:layout_marginTop="8dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_customer_title"
+        android:textSize="10pt" />
+
+    <EditText android:id="@+id/customer_firstname"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:hint="@string/first_name"
+        android:layout_marginBottom="2dp" />
+
+    <EditText android:id="@+id/customer_surname"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:hint="@string/surname"
+        android:layout_marginBottom="2dp" />
+
+    <EditText android:id="@+id/customer_mobile"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:hint="@string/mobile_number"
+        android:layout_marginBottom="2dp" />
+
+    <EditText android:id="@+id/customer_email"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:hint="@string/email"
+        android:layout_marginBottom="2dp" />
+
+    <EditText android:id="@+id/customer_address"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:hint="@string/address"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:layout_marginBottom="4dp" />
+
+    <Button
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_customer" />
+</LinearLayout>
