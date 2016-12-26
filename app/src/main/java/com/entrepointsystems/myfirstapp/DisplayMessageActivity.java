@@ -5,23 +5,32 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.entrepointsystems.myfirstapp.R;
 
-public class MyActivity extends Activity {
-    public final static String EXTRA_MESSAGE = "com.entrepointsystems.myfirstapp.MESSAGE";
+public class DisplayMessageActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
+        setContentView(R.layout.activity_display_message);
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
+        TextView textView = new TextView(this);
+        textView.setTextSize(40);
+        textView.setText(message);
+
+        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
+        layout.addView(textView);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my, menu);
+        getMenuInflater().inflate(R.menu.display_message, menu);
         return true;
     }
 
@@ -35,13 +44,5 @@ public class MyActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void confirmNewCustomer(View view){
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText customer_firstname = (EditText) findViewById(R.id.customer_firstname);
-        String message = customer_firstname.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
     }
 }

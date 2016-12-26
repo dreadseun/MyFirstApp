@@ -9,5 +9,8 @@
     <string name="mobile_number">Mobile Number</string>
     <string name="email">Email</string>
     <string name="address">Address</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
