@@ -16,14 +16,23 @@ public class DisplayMessageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);
-        TextView textView = new TextView(this);
-        textView.setTextSize(40);
-        textView.setText(message);
+
+        Bundle customer_acknowledgment = getIntent().getExtras();
+        String customer_firstname = customer_acknowledgment.getString("customer_firstname");
+        String customer_surname = customer_acknowledgment.getString("customer_surname");
+
+        TextView textView_firstname = new TextView(this);
+        textView_firstname.setTextSize(40);
+        textView_firstname.setText(customer_firstname);
+
+        TextView textView_surname = new TextView(this);
+        textView_surname.setTextSize(40);
+        textView_surname.setText(customer_surname);
+
 
         ViewGroup layout = (ViewGroup) findViewById(R.id.activity_display_message);
-        layout.addView(textView);
+        layout.addView(textView_firstname);
+        layout.addView(textView_surname);
     }
 
 

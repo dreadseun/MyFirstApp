@@ -40,8 +40,16 @@ public class MyActivity extends Activity {
     public void confirmNewCustomer(View view){
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText customer_firstname = (EditText) findViewById(R.id.customer_firstname);
-        String message = customer_firstname.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+        String message_customer_firstname = customer_firstname.getText().toString();
+
+        EditText customer_surname = (EditText) findViewById(R.id.customer_surname);
+        String message_customer_surname = customer_surname.getText().toString();
+
+        Bundle customer_acknowledgment = new Bundle();
+        customer_acknowledgment.putString("customer_firstname", message_customer_firstname);
+        customer_acknowledgment.putString("customer_surname", message_customer_surname);
+
+        intent.putExtras(customer_acknowledgment);
         startActivity(intent);
     }
 }
